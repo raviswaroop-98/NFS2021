@@ -130,12 +130,12 @@ class OffboardControl:
 			                y_a = 320-(cY)  # cY is a center of rover in Y direction, and 320 is the center location of drone.
 			                x_a = 320-(cX)  # cX is a center of rover in X direction, and 320 is the center location of drone.
 			                self.prob_ang = np.degrees(np.arctan2(y_a,x_a))  #formula to find angle between drone and rover
-                cv2.imshow("Image_window",self.pixel_img)
-                cv2.waitKey(3)
-				if self.debug:
-					# could be used to debug your detection logic
-					data = self.bridge.cv2_to_imgmsg(frame,"bgr8")
-					data.header.stamp = msg.header.stamp
+                		cv2.imshow("Image_window",self.pixel_img)
+                		cv2.waitKey(3)
+			if self.debug:
+				# could be used to debug your detection logic
+				data = self.bridge.cv2_to_imgmsg(frame,"bgr8")
+				data.header.stamp = msg.header.stamp
 					self.debugImgPub.publish(data)
 		except CvBridgeError as e:
 #			print(e)
