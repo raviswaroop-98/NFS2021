@@ -136,7 +136,7 @@ class OffboardControl:
 				# could be used to debug your detection logic
 				data = self.bridge.cv2_to_imgmsg(frame,"bgr8")
 				data.header.stamp = msg.header.stamp
-					self.debugImgPub.publish(data)
+				self.debugImgPub.publish(data)
 		except CvBridgeError as e:
 #			print(e)
 			pass
